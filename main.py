@@ -573,9 +573,9 @@ if __name__ == "__main__":
         
         if opt.freeze_encoder:
             model.encoder.requires_grad = False
-            quantize.requires_grad = False
-            quant_conv.requires_grad = False
-            post_quant_conv.requires_grad = False
+            model.quantize.requires_grad = False
+            model.quant_conv.requires_grad = False
+            model.post_quant_conv.requires_grad = False
 
         # run
         if opt.train:
