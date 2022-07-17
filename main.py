@@ -102,7 +102,15 @@ def get_parser(**parser_kwargs):
         default="",
         help="post-postfix for default name",
     )
-
+    parser.add_argument(
+        "-fe",
+        "--freeze_encoder",
+        type=str2bool,
+        const=True,
+        default=False,
+        nargs="?",
+        help="freeze the encoer",
+    )
     return parser
 
 
