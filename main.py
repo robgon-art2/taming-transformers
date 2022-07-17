@@ -562,6 +562,12 @@ if __name__ == "__main__":
         import signal
         signal.signal(signal.SIGUSR1, melk)
         signal.signal(signal.SIGUSR2, divein)
+        
+        if opt.freeze_encoder:
+            model.encoder.requires_grad = False
+            quantize.requires_grad = False
+            quant_conv.requires_grad = False
+            post_quant_conv.requires_grad = False
 
         # run
         if opt.train:
